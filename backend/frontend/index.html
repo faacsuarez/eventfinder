@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event finder</title>
+    <link rel="shortcut icon" href="img/shortcut.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <nav class="container">
+        <div class="contenedor">
+            <a href="index.html">
+                <img src="img/logo.svg" alt="logo">
+            </a>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="menu">
+                <a id="btnMiPerfil"><i class="fas fa-user"></i>Mi Perfil</a>
+                <a id="btnCerrarSesion"><i class="fas fa-sign-out-alt"></i>Cerrar Sesión</a>
+            </div>
+        </div>
+    </nav>
+
+    <a id="btnCrearEvento">
+        <i class="fas fa-plus"></i>
+        <p>Crear Evento</p>
+    </a>
+   
+
+    <section id="logIn">
+
+        <div class="contenedor">
+
+            <img src="img/inicio.svg" alt="">
+            <h2>Hey!</h2>
+            <h4>Y vos ya estás preparado para <br>tu próximo evento?</h4>
+
+            <div class="form-contenido">
+                <input type="text" id="logInUsuario" placeholder="usuario">
+                <i class="fas fa-times"></i>
+                <small>Error</small>
+            </div>
+
+            <div class="form-contenido">
+                <input type="password" id="logInPassword" placeholder="contraseña">
+                <i class="fas fa-times"></i>
+                <small>Error</small>
+            </div>
+            
+            <input type="button" value="Ingresar" id="logInBtn">
+
+            <p id="mensaje"></p>
+            
+            <p>o</p>
+            <p>¿No tienes cuenta? <a href="#" id="registro">Registrate aquí</a></p>
+        </div>
+
+    </section>
+    
+
+    <section id="crearUsuario">
+
+        <div class="contenedor">
+
+            <h2>Crear usuario</h2>
+
+            <div class="form-contenido">
+                <label for="txtNombre">Nombre:</label>
+                <input type="text" id="txtNombre" placeholder="Luis">
+                <i class="fas fa-times"></i>
+                <small>Error</small>
+            </div>
+            
+            <div class="form-contenido">
+                <label for="txtApellido">Apellido:</label>
+                <input type="text" id="txtApellido" placeholder="Bisio">
+                <i class="fas fa-times"></i>
+                <small>Error</small>
+            </div>
+            
+            <div class="form-contenido">
+                <label for="txtUsuario">Usuario:</label>
+                <input type="text" id="txtUsuario" placeholder="luisbisio">
+                <i class="fas fa-times"></i>
+                <small>Error</small>
+            </div>
+            
+            <div class="form-contenido">
+            <label for="txtContraseña">Contraseña:</label>
+            <input type="password" id="txtContraseña">
+            <i class="fas fa-times"></i>
+            <small>Error</small>
+            </div>
+
+            
+
+            <input type="button" value="Agregar" id="btnAgregarUsuario">
+            <p id="exito">Usuario creado con éxito</p>
+            
+        </div>
+    </section>
+
+
+    <section id="crearEvento">
+
+        <div class="contenedor">
+
+            <i class="fas fa-arrow-left" id="retroceso"></i>
+            <h2>Crear evento</h2>
+
+            <div class="form-contenido">
+                <label for="nombreEvento">Nombre</label>
+                <input type="text" id="nombreEvento">
+                <i class="fas fa-times"></i>
+                <small>Error</small>
+            </div>
+            
+            <div class="form-contenido">
+                <select id="categoriaEvento">
+                    <option selected disabled value="seleccioneCat">Seleccione una categoría</option>
+                    <option value="espectaculos">Espectáculos</option>
+                    <option value="cultura">Cultura</option>
+                    <option value="gastronomia">Gastronomía</option>
+                    <option value="deportes">Deportes</option>
+                    <option value="charlas">Charlas</option>
+                </select>
+                <small id="errorCategoria"></small>
+            </div>
+            
+            <div class="form-contenido">
+                <label for="fechaEvento">Fecha</label>
+                <input type="date" id="fechaEvento">
+                <small>Error</small>
+            </div>
+
+
+        <div id="cuarto">
+            <div class="form-contenido">
+                <label for="horaInicio">Hora Inicio:</label>
+                <input type="time" id="horaInicio">
+                <small>Error message</small>
+            </div>
+
+            <div class="form-contenido">
+                <label for="horaFin">Hora Fin:</label>
+                <input type="time" id="horaFin">
+                <small>Error message</small>
+            </div>
+        </div>
+            
+            <div class="form-contenido">
+                <label for="ubicacionEvento">Ubicacion</label>
+                <input type="text" id="ubicacionEvento" placeholder="Parque">
+                <i class="fas fa-times"></i>
+                <small>Error</small>
+            </div>
+
+            <div class="form-contenido">
+                <select id="departamentoEvento">
+                    <option selected disabled value="seleccioneDep">Seleccione un departamento</option>
+                    <option value="artigas">Artigas</option>
+                    <option value="salto">Salto</option>
+                    <option value="paysandu">Paysandú</option>
+                    <option value="rivera">Rivera</option>
+                    <option value="tacuarembo">Tacuarembó</option>
+                    <option value="rionegro">Río Negro</option>
+                    <option value="cerrolargo">Cerro Largo</option>
+                    <option value="durazno">Durazno</option>
+                    <option value="soriano">Soriano</option>
+                    <option value="flores">Flores</option>
+                    <option value="florida">Florida</option>
+                    <option value="treintaytres">Treinta y Tres</option>
+                    <option value="lavalleja">Lavalleja</option>
+                    <option value="rocha">Rocha</option>
+                    <option value="maldonado">Maldonado</option>
+                    <option value="canelones">Canelones</option>
+                    <option value="montevideo">Montevideo</option>
+                    <option value="sanjose">San José</option>
+                    <option value="colonia">Colonia</option>
+                </select>
+                <small id="errorDepartamento"></small>
+            </div>
+
+            <div class="form-contenido">
+                <label for="precioEvento">Precio</label>
+                <input type="number" id="precioEvento" placeholder="0">
+                <small id="errorPrecio"></small>
+
+            </div>
+
+
+            <div class="form-contenido">
+                <label for="vacunaEvento">Vacuna + 14 días</label>
+
+                <div id="vacunaform">
+                    <label for="si">Si</label>
+                    <input type="radio" name="vacuna"  value="si" id="si" checked>   
+                </div>
+                <div id="vacunaform">
+                    <label for="no">No</label>
+                    <input type="radio" name="vacuna" value="no" id="no" >
+                </div>
+
+            </div>
+            
+            <div class="form-contenido">
+                <label for="infoAdicionalEvento">Info Adicional</label>
+                <textarea id="infoAdicionalEvento" name="infoAdicionalEvento" rows="4"></textarea>
+                <small id="errorTextarea"></small>
+            </div>
+    
+            <input type="button" value="Agregar evento" id="btnAgregarEvento">
+            <p id="exitoEvento">Evento creado con exito</p>
+        </div>
+    </section>
+
+    <section id="mostrarEventos">
+        
+        <div class="contenedor">
+            <h2>¿Qué evento buscas?</h2>
+            <section id="categoriaFiltros">
+                <a id="todasCategorias" class="btnFiltrarCategoria" data-idcategoria="todasCategorias">
+                    <i class="fas fa-ellipsis-h"></i>
+                    <p>Todas</p>
+                </a>
+                <a id="cultura" class="btnFiltrarCategoria" data-idcategoria="cultura">
+                    <i class="fas fa-university"></i>
+                    <p>Cultura</p>
+                </a>
+                <a id="charlas" class="btnFiltrarCategoria" data-idcategoria="charlas">
+                    <i class="fas fa-comment"></i>
+                    <p>Charlas</p>
+                </a>
+                <a id="deportes" class="btnFiltrarCategoria" data-idcategoria="deportes">
+                    <i class="fas fa-running"></i>
+                    <p>Deportes</p>
+                </a>
+                <a id="espectaculos"class="btnFiltrarCategoria" data-idcategoria="espectaculos">
+                    <i class="fas fa-ticket-alt"></i>
+                    <p>Espectaculos</p>
+                </a>
+                <a id="gastronomia" class="btnFiltrarCategoria" data-idcategoria="gastronomia">
+                    <i class="fas fa-utensils"></i>
+                    <p>Gastronomia</p>
+                </a>
+            </section>
+            <select id="slcFiltrarDpto" onchange="filtrarDepartamentos()">
+                <option value="todos">Todos</option>
+            </select>
+
+
+            <section id="todosEventos"></section>
+
+
+
+        </div>
+        
+
+    </section>
+
+
+    <section id="eventosCreadosPorUsuario">
+        <div class="contenedor">
+
+            <h2>Mis eventos</h2>
+            <div id="eventosPorPerfil"></div>
+
+        </div>
+
+
+    </section>
+
+ 
+
+
+
+    <div id="ampliarEvento">
+        <div id="contenidoAmpliarEvento"></div>
+    </div>
+
+    <!--
+<section id="usuariosCreados">
+
+        <table border="1">
+            <thead>
+                <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>>
+                <th>Usuario</th>
+                <th>Contraseña</th>
+                <th>Eliminar</th>
+            </tr>
+        </thead>
+    <tbody id="tablaUsuarios"></tbody>
+    </table>
+
+    </section>
+
+    -->
+
+
+    <script src="codigo.js"></script>
+</body>
+</html>

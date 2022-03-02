@@ -1,0 +1,698 @@
+* {
+    margin: 0;
+    padding: 0;
+    
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+img, svg {
+	max-width: 100%;
+}
+
+body {
+    font-family: 'Heebo', sans-serif;
+    background-color: #414865;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+
+h2 {
+    font-size: 2em;
+    color: white;
+}
+
+h4 {
+    font-size: 1.1em;
+    font-weight: normal;
+    text-align: left;
+    line-height: 1.3;
+}
+
+.container {
+    width: 100%;
+    padding: 0.5em 0;
+}
+
+nav {
+    background-color: #F77857;
+}
+
+.contenedor {
+    max-width: 1200px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+nav .contenedor{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+
+}
+
+nav img {
+    height: 80%;
+}
+
+
+
+/* ------- MENU HAMBURGUESA -------- */
+.menu {
+    display: none;
+    background-color: #F77857;
+    position: absolute;
+    top: 112%;
+    right: 0px;
+    padding: 0.8em;
+    height: 110px;
+    transform: translateX(150%);
+    transition: transform 0.5s ease-in;
+}
+
+.active {
+    display: block;
+    transform: translateX(0%);
+    z-index: 100;
+}
+
+.menu a {
+    display: block;
+    color: white;
+    text-decoration: none;
+
+    padding: 1em;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.menu a:hover {
+    color: #414865;
+}
+
+.nav-toggle span {
+    display: block;
+    width: 35px;
+    background: white;
+    height: 4px;
+    border-radius: 10px;
+    margin: 8px 0;
+    transform-origin: left;
+    transition: opacity 0.2s, transform 0.2s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+}
+
+.cruz span:nth-of-type(2){
+    opacity: 0;
+}
+
+.cruz span:nth-of-type(1){
+    transform: rotatez(45deg);
+}
+
+.cruz span:nth-of-type(3){
+    transform: rotatez(-45deg);
+}
+
+
+#btnCrearEvento {
+    color: white;
+    background-color: #55b863;
+    padding: 1em;
+    font-size: 1em;
+    border-radius: 4px;
+    border: 1px solid #55b863;
+    right: 2%;
+    bottom: 5%;
+    position: fixed;
+    z-index: 100;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    font-weight: bold;
+}
+
+#btnCrearEvento .fas{
+    margin-right: 10px;
+}
+
+#crearUsuario {
+    display: none;
+}
+
+#crearEvento {
+    display: none;
+}
+
+#eventosCreadosPorUsuario {
+    display: none;
+}
+/* LOG IN */
+
+#logIn img {
+    width: 65%;
+    margin: auto;
+    padding: 3em 0;
+}
+
+#logIn input[type="button"], #crearUsuario input[type="button"], #crearEvento input[type="button"]{
+    -webkit-appearance: none;
+    color: white;
+    font-weight: bold;
+    display: block;
+    background: #F77857;
+    margin: auto;
+    padding: 1em 2em;
+    border: 1px solid #F77857;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#logIn input[type="button"]:hover, #crearUsuario input[type="button"]:hover, #crearEvento input[type="button"]:hover{
+    color: white;
+    background:none;
+    border: 2px solid #F77857;
+}
+
+#logIn h2 {
+    color: #F77857;
+}
+
+#logIn h4 {
+    margin-bottom: 2em;
+}
+
+#logIn p {
+    text-align: center;
+    padding: 1em 0;
+}
+
+#logIn a {
+    text-decoration: none;
+    color: inherit;
+    font-weight: bold;
+}
+
+#logIn a:hover {
+    color: #F77857;
+}
+
+
+/* CREAR USUARIO */
+
+#crearUsuario h2, #crearEvento h2 {
+    margin-bottom: 1em;
+}
+
+
+/* MOSTRAR EVENTOS */
+
+#todosEventos {
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between
+}
+
+#todosEventos img, #eventosPorPerfil img {
+    border-radius: 4px 4px 0px 0px;
+    filter: brightness(0.5);
+    height: 160px;
+    width: 100%;
+    object-fit: cover;
+}
+
+#todosEventos article, #eventosPorPerfil article{
+    background-color: white;
+    border-radius: 4px;
+    color: #414865;
+    margin-bottom: 2em;
+    width: 100%;
+    position: relative;
+    padding-bottom: 0.5em;
+}
+
+.eliminarEvento {
+    background: red;
+    border: 1px solid red;
+}
+
+#todosEventos .category {
+    font-size: 0.8em;
+    position: absolute;
+    top: 3%;
+    right: 3%;
+    color: white;
+    background-color: tomato;
+    padding: 0.2em 0.3em;
+    border-radius: 4px;
+}
+
+#todosEventos input[type="button"], #eventosPorPerfil input[type="button"]{
+    -webkit-appearance: none;
+    position: absolute;
+    bottom: 5%;
+    right: 3%;
+    cursor: pointer;
+    padding: 0.5em 0.8em;
+    border-radius: 50px;
+    color: white;
+    transition: ease 0.5s;
+}
+
+#todosEventos input[type="button"]:hover, #eventosPorPerfil input[type="button"]:hover{
+    -webkit-appearance: none;
+    transform: translate(0px, -5px);
+}
+
+
+
+#todosEventos .fas, #todosEventos .far, #eventosPorPerfil .fas, #eventosPorPerfil .far {
+    margin-right: 10px;
+} 
+
+#todosEventos h3, #todosEventos p, #eventosPorPerfil h3, #eventosPorPerfil p{
+    margin-left: 10px;
+} 
+
+
+#crearUsuario .contenedor, #logIn .contenedor, #crearEvento .contenedor {
+    color: white;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: auto;
+}
+
+#eventosCreadosPorUsuario h2 {
+    margin: 1em 0;
+}
+
+
+/* FORMULARIO */
+
+
+.form-contenido {
+    margin-bottom:10px;
+    padding-bottom:20px;
+    position:relative;
+  }
+
+  .form-contenido label {
+    display: inline-block;
+    margin-bottom: 5px;
+  }
+
+  .form-contenido input, .form-contenido select, .form-contenido textarea {
+    -webkit-appearance: none;
+    border: 2px solid #f0f0f0;
+    border-radius: 4px;
+    display:block;
+    width:100%;
+    padding:10px;
+    font-family: inherit;  
+    box-sizing: border-box;
+  }
+
+input[type="number"]{
+    width: 15%;
+    display: block;
+}
+
+#vacunaform {
+    display: flex;
+    align-items: center;
+}
+
+input[type="radio"]{
+    width: 5%;
+    height: 15px;
+    margin-left: 10px;
+}
+
+  .form-contenido.exito input{
+    border-color:#2ecc71;
+  }
+  
+  .form-contenido.error input{
+    border-color:#e74c3c;
+  }
+
+  #logIn .form-contenido .fas {
+    position: absolute;
+    top:24%;
+    right:3%;
+    visibility: hidden;
+  }
+
+  #logIn .form-contenido.error .fas {
+    color: #e74c3c;
+    visibility: visible;
+  }
+
+  #crearUsuario .form-contenido .fas {
+    position: absolute;
+    top:45%;
+    right:3%;
+    visibility: hidden;
+  }
+
+  #crearUsuario .form-contenido.error .fas {
+    color: #e74c3c;
+    visibility: visible;
+  }
+
+
+  #crearEvento .form-contenido .fas {
+    position: absolute;
+    top:45%;
+    right:3%;
+    visibility: hidden;
+  }
+
+  #crearEvento .form-contenido.error .fas {
+    color: #e74c3c;
+    visibility: visible;
+  }
+
+
+  .form-contenido small {
+    visibility:hidden;
+    position:absolute;
+    bottom:0;
+    left: 0;
+  }
+
+  .form-contenido.error small {
+    color: #e74c3c;
+    visibility:visible;
+  }
+
+  #exito, #exitoEvento {
+    display: none;
+    color: #59CD6B;
+    text-align: center;
+    margin-top: 1.5em;
+}
+
+input[type="time"]{
+    width: 80%;
+    display: block;
+}
+
+#cuarto .form-contenido {
+    width: 100%;
+}
+
+#cuarto {
+    display: flex;
+}
+
+
+#errorCategoria, #errorDepartamento, #errorPrecio, #errorTextarea {
+    visibility: visible;
+    color: red;
+}
+
+
+
+
+#todosEventos #espectaculos{
+    background-color: #65A4DB;
+    border: 1px solid #65A4DB;
+}
+
+
+#todosEventos #cultura{
+    background-color: #F8AE59;
+    border: 1px solid #F8AE59;
+}
+
+#todosEventos #gastronomia{
+    background-color: #F77857;
+    border: 1px solid #F77857;
+}
+
+#todosEventos #deportes{
+    background-color: #6ECCC3;
+    border: 1px solid #6ECCC3;
+}
+
+#todosEventos #charlas{
+    background-color: #AC70C6;
+    border: 1px solid #AC70C6;
+}
+
+
+
+.espectaculos, .cultura, .gastronomia, .deportes, .charlas {
+    position: absolute;
+    top: 3%;
+    right: 3%;
+    color:white;
+    text-transform: capitalize;
+    padding: 0.3em;
+    border-radius: 4px;
+}
+
+.espectaculos {
+    background: #65A4DB;
+}
+
+.cultura {
+    background: #F8AE59;
+}
+
+.gastronomia {
+    background: #F77857;
+}
+
+.deportes {
+    background: #6ECCC3;
+}
+
+.charlas {
+  background: #AC70C6;
+}
+
+
+/* CATEGORIA FILTROS */
+#categoriaFiltros {
+    display: flex;
+    overflow-x: auto;
+    margin-bottom: 1.5em;
+}
+
+#categoriaFiltros a {
+    background-color: white;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 4px;
+    min-width: 150px;
+    margin-right: 40px;
+    border-radius: 35px;
+    padding: 0.5em 0;
+}
+
+#categoriaFiltros .fas {
+    font-size: 2em;
+    margin-bottom: 15px;
+}
+
+
+#categoriaFiltros::-webkit-scrollbar {
+    width: 0;
+}
+
+#categoriaFiltros p {
+    font-weight: bold;
+}
+
+#categoriaFiltros #cultura  {
+    color: #F8AE59;
+}
+
+#categoriaFiltros #espectaculos  {
+    color: #65A4DB;
+}
+
+#categoriaFiltros #deportes  {
+    color: #6ECCC3;
+}
+#categoriaFiltros #gastronomia  {
+    color: #F77857;
+}
+#categoriaFiltros #charlas  {
+    color: #AC70C6;
+}
+
+
+
+#eventoPorPerfil {
+    background: violet;
+}
+
+.infoEventoIndividual {
+    margin: 30px 0;
+    background:rgb(183, 218, 194)
+}
+
+#slcFiltrarDpto {
+    -webkit-appearance: none;
+    display: block;
+    border: 2px solid #f0f0f0;
+    border-radius: 4px;
+    width:60%;
+    padding:10px;
+    font-family: inherit;  
+    box-sizing: border-box;
+    margin-bottom: 3em;
+}
+
+#mostrarEventos h2 {
+    margin: 1em 0;
+}
+
+#retroceso {
+    margin: 1em 0;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+
+
+#ampliacion_evento{
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: -100vh;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 100;
+}
+
+#closeAmpliar {
+    position: absolute;
+    top: 0;
+    left: 3%;
+    font-size: 1.5em;
+    transform: rotate(45deg);
+    cursor: pointer;
+    z-index: 10;
+    color: white;
+}
+
+#ampliarEvento {
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    display: none;
+}
+
+#contenidoAmpliarEvento{
+    width: 80%;
+    background-color: honeydew;
+    color: black;
+    text-align: center;
+    border-radius: 3px;
+    position: relative;
+}
+
+#contenidoAmpliarEvento img{
+    border-radius: 4px 4px 0px 0px;
+    filter: brightness(0.5);
+    height: 140px;
+    width: 100%;
+    object-fit: cover;
+}
+
+#contenidoAmpliarEvento h3 {
+    text-align: left;
+    margin-left:1.5em;
+    color: #4E4E4E;
+    margin-bottom: 0.2em;
+    text-transform: capitalize;
+}
+
+#contenidoAmpliarEvento p {
+    text-align: left;
+    margin-left:1.5em;
+    text-transform: capitalize;
+    margin-bottom: 0.4em;
+    color: #4E4E4E;
+}
+
+#contenidoAmpliarEvento h2{
+    position: absolute;
+    color: white;
+    top: 21%;
+    left: 5%;
+}
+
+
+#contenidoAmpliarEvento p:last-child{
+    text-transform: inherit;
+}
+
+#contenidoAmpliarEvento .fas, #contenidoAmpliarEvento .far{
+    margin-right: 10px;
+}
+
+
+
+
+
+@media screen and (min-width:992px){
+    .nav-toggle {
+        display: none;
+    }
+    .menu {
+        display: flex !important;
+        position: static;
+        justify-content: flex-end;
+        padding: 0;
+        height: auto;
+        transform: translateX(0%);
+    }
+    .menu > a {
+        display: inline-block;
+    }
+    #todosEventos {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    #todosEventos article {
+        width: 30%;
+    }
+    #contenidoAmpliarEvento {
+        width: 40%;
+    }
+    #eventosPorPerfil {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    #eventosPorPerfil article {
+        width: 30%;
+    }
+    #logIn img {
+        width: 25%;
+        margin: auto;
+        padding: 3em 0;
+    }
+}
+
+
